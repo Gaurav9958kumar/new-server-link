@@ -10,6 +10,7 @@ window.onload=()=>{
     res=await fetch(url)
     res=await res.json();
     console.log(res);
+    display(res)
  }
 
  async function addDetails(e){
@@ -36,4 +37,24 @@ window.onload=()=>{
    })
    getData()
    form.reset();
+ }
+
+
+     function display(data){
+     let container=document.getElementById("container");
+     container.innerHTML=null;
+     data.forEach(function(ele){
+      let div=document.createElement("div");
+      let image=document.createElement("img");
+      image.src=ele.image;
+      let name=document.createElement("h3");
+      name.innerText=ele.name;
+      let brand=document.createElement("h3");
+      brand.innerText=ele.brand;
+      let price=document.createElement("h3");
+      price.innerText=ele.price;
+      div.append(image,name,brand,price);
+      container.append(div);
+
+     })
  }
