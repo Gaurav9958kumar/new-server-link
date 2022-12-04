@@ -1,27 +1,29 @@
 
-const url="https://new-server-link.onrender.com/masai"
+const url="https://new-server-link.onrender.com/Product"
 
 window.onload=()=>{
     getData();
+    
 }
 
  async function getData(){
-    res=await fetch(`${url}`)
+    res=await fetch(url)
     res=await res.json();
+    console.log(res);
  }
 
  async function addDetails(){
   let form=document.getElementById("form");
-  let name=form.name.value;
-  let brand=form.brand.value;
-  let price=+form.price.value;
-  let image=form.image.value;
+  let name=form.name;
+  let brand=form.brand;
+  let price=+form.price;
+  let image=form.image;
     
    let obj={
-    name:name,
-    brand:brand,
-    price:price,
-    image:image,
+    name:name.value,
+    brand:brand.value,
+    price:price.value,
+    image:image.value,
     id:Math.random()
    }
 
@@ -31,4 +33,6 @@ window.onload=()=>{
         "Content-Type": "application/json",
       },
    })
+   getData()
+   
  }
