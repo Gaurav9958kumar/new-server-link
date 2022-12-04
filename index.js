@@ -18,15 +18,16 @@ window.onload=()=>{
   let form=document.getElementById("form");
   let name=form.name;
   let brand=form.brand;
-  let price=+form.price;
+  let price=form.price;
   let image=form.image;
     
    let obj={
     name:name.value,
     brand:brand.value,
-    price:price.value,
     image:image.value,
-    id:Math.random()
+    
+    id:Math.random(),
+    price:+price.value
    }
 
    let res=await fetch(url,{
@@ -51,7 +52,7 @@ window.onload=()=>{
       name.innerText=ele.name;
       let brand=document.createElement("h3");
       brand.innerText=ele.brand;
-      let price=document.createElement("h3");
+      let price=document.createElement("p");
       price.innerText=ele.price;
       div.append(image,name,brand,price);
       container.append(div);
