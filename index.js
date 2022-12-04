@@ -12,7 +12,8 @@ window.onload=()=>{
     console.log(res);
  }
 
- async function addDetails(){
+ async function addDetails(e){
+    e.preventDefault();
   let form=document.getElementById("form");
   let name=form.name;
   let brand=form.brand;
@@ -34,5 +35,5 @@ window.onload=()=>{
       },
    })
    getData()
-   
+   form.reset();
  }
