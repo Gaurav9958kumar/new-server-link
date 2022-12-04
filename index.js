@@ -54,7 +54,9 @@ window.onload=()=>{
       brand.innerText=ele.brand;
       let price=document.createElement("p");
       price.innerText=ele.price;
-      div.append(image,name,brand,price);
+      let updateBtn=document.createElement("button");
+      updateBtn.innerText="Update Price"
+      div.append(image,name,brand,price,updateBtn);
       container.append(div);
 
      })
